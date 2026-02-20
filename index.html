@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProposalGenius — AI Document Platform</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Highlight.js for code formatting in markdown -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- OVERLAYS -->
+    <div id="toastContainer" class="toast-container"></div>
+    <div id="loaderOverlay" class="loader-overlay hidden">
+        <div class="spinner"></div>
+        <p id="loaderText">Loading...</p>
+    </div>
+
+    <!-- APP HEADER -->
+    <header class="app-header">
+        <div class="logo" onclick="app.navigate('dashboard')">
+            <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                <rect x="4" y="4" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2.5" />
+                <path d="M12 14L28 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 20L24 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 26L20 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <circle cx="28" cy="28" r="4" fill="var(--accent)" />
+            </svg>
+            <h1>Proposal<span class="accent">Genius</span></h1>
+            <div id="tierBadge" class="tier-badge hidden">PRO</div>
+        </div>
+
+        <nav class="header-nav" id="mainNav">
+            <!-- Injected by JS based on auth state -->
+        </nav>
+    </header>
+
+    <!-- WRAPPER FOR ALL PAGES (SPA Routing) -->
+    <main id="appContainer" class="app-container">
+        <!-- Views will be injected here by app.js -->
+    </main>
+
+    <!-- HTML2PDF CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Marked CDN for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- DOMPurify for sanitizing marked output -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
